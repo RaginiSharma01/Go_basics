@@ -11,8 +11,8 @@ func main() {
 	// 2. serve static assets
 	// 3 Accept connections
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println(w, "welcome to my server")
+	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("welcome to my server!"))
 	})
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static", fs))
