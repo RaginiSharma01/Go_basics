@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 
 	"github.com/jackc/pgx/v5"
 )
@@ -13,7 +14,7 @@ func main() {
 
 	conn, err := pgx.Connect(context.Background(), connStr)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 
 	err = conn.Ping(context.Background())

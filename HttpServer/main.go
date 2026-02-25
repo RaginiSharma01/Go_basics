@@ -14,8 +14,7 @@ func main() {
 	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("welcome to my server!"))
 	})
-	fs := http.FileServer(http.Dir("static/"))
-	http.Handle("/static/", http.StripPrefix("/static", fs))
+
 	fmt.Println("the server is runnig on local host 3000")
 	http.ListenAndServe(":3000", nil)
 }
