@@ -11,11 +11,20 @@ type Student struct {
 func main() {
 	m := make(map[string]Student)
 
-	m["student1"] = Student{
-		Name: "ragini",
-		Id:   23,
-		Mark: 87,
-	}
+	m["s1"] = Student{"ragini", 1, 90}
+	m["s2"] = Student{"anmol", 2, 88}
+	s := m["s1"]
+
+	fmt.Println(s)
+
+	s.Mark = 99
+	m["s1"] = s
+	fmt.Println(s)
+
+	delete(m, "s2")
 	fmt.Println(m)
-	fmt.Println(m["student1"])
+
+	v, ok := m["s1"]
+	fmt.Println(v, "present?", ok)
+
 }
