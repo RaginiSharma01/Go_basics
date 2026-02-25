@@ -3,27 +3,21 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 
-	"github.com/jackc/pgx/v5"
+	"data_access/db"
 )
 
 func main() {
 
-	connStr := "postgres://postgres:1234@localhost:5432/postgres"
-
-	conn, err := pgx.Connect(context.Background(), connStr)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	err = conn.Ping(context.Background())
-
-	if err != nil {
-		fmt.Println("err", err)
-	}
+	conn := db.ConnectDB()
 
 	defer conn.Close(context.Background())
 
-	fmt.Println("Connected to PostgreSQL")
+	db.InsertUser(conn, "Ragini", "ragini@email.com")
+
+	users := db.GetUsers(conn)
+
+	for _, u := range users {
+		fmt.Println(u.ID, u.Name, u.Email)
+	}
 }
