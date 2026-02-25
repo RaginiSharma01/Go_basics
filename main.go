@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 
+	methods "ddr/Methods"
 	"ddr/maths"
 )
 
@@ -15,4 +17,11 @@ func main() {
 	fmt.Println("Subtraction:", diff)
 	fmt.Println("Modulo:", mod)
 
+	emp1 := methods.Empolyee{
+		Name:     "Sam Adolf",
+		Salary:   500000,
+		Currency: "$",
+	}
+
+	log.Fatal(emp1)
 }
