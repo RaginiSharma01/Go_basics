@@ -30,7 +30,7 @@ func main() {
 	names := []string{"vinith", "ragini", "thangasamy"}
 	emails := []string{"abc@gmail.com", "abd@gmail.com", "abg@gmail.com"}
 
-	posts := []string{"hello its my first on medium", "Power of young gen :) Students of nepal united and fought for there rights. Fed from corruption!"}
+	posts := []string{"hello its my first on post on X", "Power of young gen, Students of nepal united and fought for there rights. Fed from corruption!"}
 	title := []string{"POV:first post", "Nepal on fireeee!"}
 
 	for i := range names {
