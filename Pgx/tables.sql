@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS users(
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE ID NOT EXISTS post(
+    id SERIAL PRIMARY KEY,
+    posts TEXT NOT NULL,
+    title TEXT NOT NULL
+);
+
