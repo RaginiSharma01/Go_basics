@@ -40,9 +40,6 @@ func main() {
 			_, err = pool.Exec(context.Background(), "INSERT INTO post (posts, title) VALUES ($1, $2) ON CONFLICT DO NOTHING", posts[j], title[j])
 
 		}
-		if err != nil {
-			return
-		}
 	}
 
 	if err != nil {
