@@ -27,7 +27,7 @@ func main() {
 
 	_, err = tx.Exec(ctx,
 		"INSERT INTO orders (user_id, amount) VALUES ($1, $2)",
-		1, 15000,
+		1, 3000000,
 	)
 	if err != nil {
 		log.Println("Insert failed:", err)
