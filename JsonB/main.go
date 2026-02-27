@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -36,11 +37,14 @@ func main() {
 			log.Fatal(err)
 		}
 		_, err = pool.Exec(context.Background(),
-			`INSERT INTO user_settings(user_id[i] , settings[i])
+			`INSERT INTO user_settings(user_id , settings)
 	VALUES($1 ,$2)`, i+1, jsonData)
+
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
-	if err != nil {
-		log.Fatal(err)
-	}
+
+	fmt.Printf("sucess")
 
 }
