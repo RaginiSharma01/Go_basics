@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 )
@@ -16,6 +15,6 @@ func main() {
 		w.Write([]byte("welcome to my server!"))
 	})
 
-	log.fatal("the serg.ver is runnig on local host 3000")
+	log.Fatal("the serg.ver is runnig on local host 3000")
 	http.ListenAndServe(":3000", nil)
 }
